@@ -11,14 +11,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary = {
   args: {
-    buttonStyle: 'primary',
+    buttonVariant: 'primary',
     children: 'Hello',
   },
 } satisfies Story;
 
 export const Secondary = {
   args: {
-    buttonStyle: 'secondary',
+    buttonVariant: 'secondary',
     children: 'Hello',
   },
 } satisfies Story;

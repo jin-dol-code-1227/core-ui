@@ -6,7 +6,7 @@ import ArrowIcon from '../../../assets/arrow.svg';
 const ActionButton = (props: ActionButtonProps) => {
   const {
     className,
-    buttonVariant,
+    buttonVariant = 'secondary',
     actionButtonVariant,
     children,
     ...restProps
@@ -17,14 +17,14 @@ const ActionButton = (props: ActionButtonProps) => {
   return (
     <button
       {...restProps}
-      className={`${className} ${buttonClassName} transition-colors rounded-full flex items-center`}
+      className={`${className} ${buttonClassName} transition-colors rounded-full flex items-center p-2 pl-3`}
     >
-      {actionButtonVariant === 'refresh' && (
-        <img src={RefreshIcon} className='inline w-5 h-5 mr-2' />
-      )}
       {children}
       {actionButtonVariant === 'arrow' && (
         <img src={ArrowIcon} className='inline w-5 h-5 ml-2' />
+      )}
+      {actionButtonVariant === 'refresh' && (
+        <img src={RefreshIcon} className='inline w-5 h-5 ml-2' />
       )}
     </button>
   );

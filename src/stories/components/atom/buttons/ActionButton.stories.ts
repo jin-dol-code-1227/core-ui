@@ -11,7 +11,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Refresh = {
   args: {
-    buttonVariant: 'secondary',
     actionButtonVariant: 'refresh',
     children: 'Refresh',
   },
@@ -19,7 +18,6 @@ export const Refresh = {
 
 export const Arrow = {
   args: {
-    buttonVariant: 'secondary',
     actionButtonVariant: 'arrow',
     children: 'Arrow',
   },

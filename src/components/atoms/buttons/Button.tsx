@@ -2,9 +2,9 @@ import { ButtonStyleMapper } from '../../../utils/components/atoms/buttons/Butto
 import { ButtonProps } from '../../../type/components/atoms/buttons/Button';
 
 const Button = (props: ButtonProps) => {
-  const { className, buttonStyle, ...restProps } = props;
+  const { className, buttonVariant, ...restProps } = props;
 
-  const buttonClassName = ButtonStyleMapper.get(buttonStyle);
+  const buttonClassName = ButtonStyleMapper.get(buttonVariant);
 
   return (
     <button

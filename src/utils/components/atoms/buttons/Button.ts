@@ -1,6 +1,6 @@
-import { ButtonStyleType } from '../../../../type/components/atoms/buttons/Button';
+import { ButtonVariants } from '../../../../type/components/atoms/buttons/Button';
 
-export const ButtonStyleMapper = new Map<ButtonStyleType, string>([
+export const ButtonStyleMapper = new Map<ButtonVariants, string>([
   ['primary', 'bg-blue-500 hover:bg-blue-700 text-white border-0'],
   [
     'secondary',

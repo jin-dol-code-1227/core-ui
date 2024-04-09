@@ -1,5 +1,5 @@
-import { ButtonStyleMapper } from '../../../utils/components/atoms/buttons/Button';
-import { ButtonProps } from '../../../type/components/atoms/buttons/Button';
+import { ButtonStyleMapper } from '../../../utils/components/atoms/buttons';
+import { ButtonProps } from '../../../type/components/atoms/buttons';
 
 const Button = (props: ButtonProps) => {
   const { className, buttonVariant, ...restProps } = props;

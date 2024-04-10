@@ -1,7 +1,7 @@
 import { ButtonStyleMapper } from '../../../utils/components/atoms/buttons';
 import { ActionButtonProps } from '../../../type/components/atoms/buttons';
 import RefreshIcon from '../../../assets/refresh.svg';
-import ArrowIcon from '../../../assets/arrow.svg';
+import ArrowIcon from '../../../assets/arrow-right.svg';
 
 const ActionButton = (props: ActionButtonProps) => {
   const {

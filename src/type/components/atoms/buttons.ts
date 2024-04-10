@@ -20,4 +20,5 @@ export type ActionButtonVariants = 'refresh' | 'arrow';
 
 export interface ActionButtonProps extends ButtonProps {
   actionButtonVariant: ActionButtonVariants;
+  active?: Boolean;
 }

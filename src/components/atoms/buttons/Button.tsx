@@ -1,15 +1,12 @@
-import { ButtonStyleMapper } from '../../../utils/components/atoms/buttons';
 import { ButtonProps } from '../../../type/components/atoms/buttons';
 
 const Button = (props: ButtonProps) => {
-  const { className, buttonVariant, ...restProps } = props;
-
-  const buttonClassName = ButtonStyleMapper.get(buttonVariant);
+  const { className, buttonVariant = 'primary', ...restProps } = props;
 
   return (
     <button
       {...restProps}
-      className={`${className} ${buttonClassName} transition-colors`}
+      className={`${className} ${buttonVariant}-button basic-button`}
     />
   );
 };

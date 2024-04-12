@@ -15,7 +15,7 @@ const TextButton = (props: TextButtonProps) => {
     ...restProps
   } = props;
 
-  const [isOpen, setIsOpen] = useState<Boolean>(open);
+  const [isOpen, setIsOpen] = useState<boolean>(open);
 
   const onClickButton = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

@@ -11,7 +11,7 @@ export type TextButtonVariants = 'right' | 'down';
 export interface TextButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   textButtonVariant?: TextButtonVariants;
-  open?: Boolean;
+  open?: boolean;
   onClickOpen?: () => void;
   onClickClose?: () => void;
 }
@@ -20,5 +20,11 @@ export type ActionButtonVariants = 'refresh' | 'arrow';
 
 export interface ActionButtonProps extends ButtonProps {
   actionButtonVariant: ActionButtonVariants;
-  active?: Boolean;
+  active?: boolean;
+}
+
+export type IconButtonVariants = 'heart' | 'bookmark' | 'star';
+export interface IconButtonProps extends ButtonProps {
+  iconButtonVariant: IconButtonVariants;
+  active?: boolean;
 }

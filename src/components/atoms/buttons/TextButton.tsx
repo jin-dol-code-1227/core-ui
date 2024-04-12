@@ -31,24 +31,20 @@ const TextButton = (props: TextButtonProps) => {
   return (
     <button
       {...restProps}
-      className={`${className} flex items-center p-2 border-0 bg-transparent text-base`}
+      className={`${className} text-button`}
       onClick={onClickButton}
     >
       {children}
       {textButtonVariant === 'right' && (
         <img
           src={RightIcon}
-          className={`${
-            isOpen && 'rotate-y-180'
-          } transition-transform duration-500 inline w-5 h-5`}
+          className={`${isOpen && 'rotate-y-180'} button-icon-transition`}
         />
       )}
       {textButtonVariant === 'down' && (
         <img
           src={DownIcon}
-          className={`${
-            isOpen && 'rotate-x-180'
-          } transition-transform duration-500 inline w-5 h-5`}
+          className={`${isOpen && 'rotate-x-180'} button-icon-transition`}
         />
       )}
     </button>

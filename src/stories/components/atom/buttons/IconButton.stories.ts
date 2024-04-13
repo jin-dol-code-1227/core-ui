@@ -12,20 +12,17 @@ type Story = StoryObj<typeof meta>;
 export const Heart = {
   args: {
     iconButtonVariant: 'heart',
-    children: 'Hello',
   },
 } satisfies Story;
 
 export const Bookmark = {
   args: {
     iconButtonVariant: 'bookmark',
-    children: 'Hello',
   },
 } satisfies Story;
 
 export const Star = {
   args: {
     iconButtonVariant: 'star',
-    children: 'Hello',
   },
 } satisfies Story;

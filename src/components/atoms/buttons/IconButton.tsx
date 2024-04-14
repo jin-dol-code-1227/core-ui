@@ -1,8 +1,8 @@
 import { IconButtonProps } from '../../../type/components/atoms/buttons';
-import useActiveButton from '../../../hooks/components/atoms/buttons';
 import HeartIcon from '../icons/HeartIcon';
 import BookmarkIcon from '../icons/BookmarkIcon';
 import StarIcon from '../icons/StarIcon';
+import useToggle from '../../../hooks/components/atoms/useToggle';
 
 const IconButton = (props: IconButtonProps) => {
   const {
@@ -10,10 +10,15 @@ const IconButton = (props: IconButtonProps) => {
     iconButtonVariant,
     active = false,
     onClick,
+    onClickToggle,
     ...restProps
   } = props;
 
-  const [isActive, onClickButton] = useActiveButton(active, onClick);
+  const [isActive, onClickButton] = useToggle<HTMLButtonElement>(
+    active,
+    onClickToggle,
+    onClick
+  );
 
   return (
     <button

@@ -1,31 +1,23 @@
 import { TextButtonProps } from '../../../type/components/atoms/buttons';
 import RightIcon from '../../../assets/arrow-right.svg';
 import DownIcon from '../../../assets/arrow-down.svg';
-import { useCallback, useState } from 'react';
+import useToggle from '../../../hooks/components/atoms/useToggle';
 
 const TextButton = (props: TextButtonProps) => {
   const {
     className,
     textButtonVariant = 'right',
-    open = false,
+    active = false,
     onClick,
-    onClickOpen,
-    onClickClose,
+    onClickToggle,
     children,
     ...restProps
   } = props;
 
-  const [isOpen, setIsOpen] = useState<boolean>(open);
-
-  const onClickButton = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      console.log('IS_OPEN => ', isOpen);
-      if (isOpen && onClickClose) onClickClose();
-      if (!isOpen && onClickOpen) onClickOpen();
-      if (onClick) onClick(event);
-      setIsOpen(!isOpen);
-    },
-    [isOpen]
+  const [isActive, onClickButton] = useToggle<HTMLButtonElement>(
+    active,
+    onClickToggle,
+    onClick
   );
 
   return (
@@ -38,13 +30,13 @@ const TextButton = (props: TextButtonProps) => {
       {textButtonVariant === 'right' && (
         <img
           src={RightIcon}
-          className={`${isOpen && 'rotate-y-180'} button-icon-transition`}
+          className={`${isActive && 'rotate-y-180'} button-icon-transition`}
         />
       )}
       {textButtonVariant === 'down' && (
         <img
           src={DownIcon}
-          className={`${isOpen && 'rotate-x-180'} button-icon-transition`}
+          className={`${isActive && 'rotate-x-180'} button-icon-transition`}
         />
       )}
     </button>

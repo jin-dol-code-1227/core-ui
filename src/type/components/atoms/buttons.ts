@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
+import { Toggleable } from './global';
 
 export type ButtonVariants = 'primary' | 'secondary';
 
@@ -9,22 +10,18 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export type TextButtonVariants = 'right' | 'down';
 
 export interface TextButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    Toggleable {
   textButtonVariant?: TextButtonVariants;
-  open?: boolean;
-  onClickOpen?: () => void;
-  onClickClose?: () => void;
 }
 
 export type ActionButtonVariants = 'refresh' | 'arrow';
 
-export interface ActionButtonProps extends ButtonProps {
+export interface ActionButtonProps extends ButtonProps, Toggleable {
   actionButtonVariant: ActionButtonVariants;
-  active?: boolean;
 }
 
 export type IconButtonVariants = 'heart' | 'bookmark' | 'star';
-export interface IconButtonProps extends ButtonProps {
+export interface IconButtonProps extends ButtonProps, Toggleable {
   iconButtonVariant: IconButtonVariants;
-  active?: boolean;
 }

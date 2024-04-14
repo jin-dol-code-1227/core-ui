@@ -24,6 +24,9 @@
   .icon-button {
     @apply rounded-full p-3 basic-button;
   }
+  .selection {
+    @apply mr-2 w-4 h-4 accent-blue-500 hover:accent-blue-700 transition-all;
+  }
 }
 
 :root {

@@ -5,26 +5,28 @@ const Checkbox = (props: SelectionProps) => {
   const {
     className,
     active,
-    selectionVariant,
+    abled = true,
     children,
     onClick,
-    onClickToggle,
+    onChangeActive,
+    selectionVariable = 'checkbox',
     ...restProps
   } = props;
 
-  const [isActive, onClickInput] = useToggle<HTMLInputElement>(active);
+  const [isActive, onClickInput] = useToggle(active, onChangeActive, onClick);
 
   return (
-    <div className='inline-flex items-center'>
+    <label className='flex items-center'>
       <input
         className={`${className} selection`}
-        type='checkbox'
+        type={selectionVariable}
         {...restProps}
         checked={isActive}
         onClick={onClickInput}
+        disabled={!abled}
       />
       {children}
-    </div>
+    </label>
   );
 };
 

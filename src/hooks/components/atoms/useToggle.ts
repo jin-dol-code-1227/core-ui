@@ -6,11 +6,11 @@ import {
   useEffect,
 } from 'react';
 
-function useToggle<T extends HTMLElement>(
+function useToggle(
   initialState: boolean = false,
-  clickHandler?: (state: boolean) => void,
-  onClick?: MouseEventHandler<T>
-): [boolean, (event: MouseEvent<T>) => void] {
+  onChangeActive?: (state: boolean) => void,
+  onClick?: MouseEventHandler<HTMLElement>
+): [boolean, (event: MouseEvent<HTMLElement>) => void] {
   const [isActive, setIsActive] = useState<boolean>(initialState);
 
   useEffect(() => {
@@ -18,8 +18,8 @@ function useToggle<T extends HTMLElement>(
   }, [initialState]);
 
   const onClickComponent = useCallback(
-    (event: MouseEvent<T>) => {
-      if (clickHandler) clickHandler(isActive);
+    (event: MouseEvent<HTMLElement>) => {
+      if (onChangeActive) onChangeActive(!isActive);
       if (onClick) onClick(event);
       setIsActive(!isActive);
     },

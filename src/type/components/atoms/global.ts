@@ -1,4 +1,4 @@
 export interface Toggleable {
   active?: boolean;
-  onClickToggle?: (state: boolean) => void;
+  onChangeActive?: (state: boolean) => void;
 }

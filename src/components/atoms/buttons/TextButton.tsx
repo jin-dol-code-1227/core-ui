@@ -9,16 +9,12 @@ const TextButton = (props: TextButtonProps) => {
     textButtonVariant = 'right',
     active = false,
     onClick,
-    onClickToggle,
+    onChangeActive,
     children,
     ...restProps
   } = props;
 
-  const [isActive, onClickButton] = useToggle<HTMLButtonElement>(
-    active,
-    onClickToggle,
-    onClick
-  );
+  const [isActive, onClickButton] = useToggle(active, onChangeActive, onClick);
 
   return (
     <button
